@@ -34,7 +34,7 @@ But it's not all bad. At least the creator got your money (passive aggressive :)
 
 # How it works
 
-Your Gumroad Library page (`https://app.gumroad.com/library) contains a block of JSON with all the information about your assets. It then dynamically renders the page from that information. Likewise, the download page for a product you purchased is also a block of JSON that is rendered into html.
+Your Gumroad Library page (app.gumroad.com/library) contains a block of JSON with all the information about your assets. It then dynamically renders the page from that information. Likewise, the download page for a product you purchased is also a block of JSON that is rendered into html.
 
 1. This downloads the Library page and captures the JSON. It saves the full Library page as an .html file
 2. It then iterates through all your product download pages and downloads them and captures their JSON. 
