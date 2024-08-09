@@ -137,13 +137,16 @@ def parse_library_json(json_text):
             logging.warn('Creator name is missing with id %s for product "%s"', athing['product']['creator_id'], gri.name)
             gri.creator_name = '[id %s]' % athing['product']['creator_id']
 
-        logging.info('Found product "%s" by %s',gri.name, gri.creator_name)
+        logging.info('Found product "%s" by %s', gri.name, gri.creator_name)
         gri.thumbnail = athing['product']['thumbnail_url']
         gri.images = []
 
-        for cover in athing['product']['covers']:
-            cover_url = cover['url']
-            gri.images.append(cover_url)
+        if 'covers' in athing['product']:
+            for cover in athing['product']['covers']:
+                cover_url = cover['url']
+                gri.images.append(cover_url)
+        else:
+            logging.warn('No covers found for product "%s"', gri.name)
 
         gri.download_url = athing['purchase']['download_url']
         gri.purchase_id = athing['purchase']['id']
