@@ -1,0 +1,13 @@
+# Ignore everything
+**
+
+# Unignore this file
+!.gitignore
+
+# Unignore these files that can change without warning
+!**/*.json
+!**/*.html
+!**/*.url
+
+# Unignore the directories leading to those files
+!*/
